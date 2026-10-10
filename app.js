@@ -50,7 +50,9 @@ app.use((
     console.log(req.url);
     next();
 });
-
+app.get("/",(req,res)=>{
+    res.redirect("/listings");
+});
 
 const store = MongoStore.create({
     mongoUrl: dbUrl,
