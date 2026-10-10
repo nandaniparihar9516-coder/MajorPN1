@@ -45,6 +45,7 @@ module.exports.showListing = async (req,res)=>{
 };
 
 module.exports.createListing = async(req,res,next)=>{
+  console.log("TOKEN:", !!process.env.MAP_TOKEN);
  let response = await geocodingClient.forwardGeocode({
   query:req.body.listing.location,
   limit: 1,
